@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+//color
+$color_dgray: #d6d6d6;
+$color_twitter: #1DA1F2;
+$color_twitch: #6441A4;
+$color_facebook: #3B5998;
+$color_steam: #000000;
+$color_github: #181717;
+$color_instagram: #E4405F;
+$color_git: #F05032;
+$color_youtube:#f00;
+$color_himawari:#FBC64A;
+
+//MQ
+@mixin tab {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin hov_link($color) {
+  a {
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: $color;
+      transition: all 0.2s cubic-bezier(.65, 1.28, .8, 1.01);
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@mixin anim_hov {
+  transition: all 0.2s ease;
+}
