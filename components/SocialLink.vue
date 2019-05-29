@@ -1,26 +1,49 @@
 <template lang="pug">
-  ul.social__container
-    li.item.twitter
-      a(href='https://twitter.com/dazi_gomi', target='_blank') Twitter
-    li.item.instagram
-      a(href='https://www.instagram.com/dazi_gomi/', target='_blank') Instagram
-    li.item.steam
-      a(href='https://steamcommunity.com/id/dazi_gomi', target='_blank') Steam
-    li.item.twitch
-      a(href='https://www.twitch.tv/dazi_gomi', target='_blank') Twitch
+  section
+    h3.head.
+      Social Account
+    ul.col__list
+      li(v-for="item in links" :class="item.color").item
+        a(:href="item.url", target="_blank") {{item.name}}
 </template>
 
-<style lang="scss">
-  .social__container {
-    width: 640px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    @include tab {
-      width: 50%;
+<script>
+  export default {
+    data() {
+      return {
+        links: [
+          {
+            "name": "Twitter",
+            "url": "https://twitter.com/dazi_gomi",
+            "color":"twitter"
+          },
+          {
+            "name": "Instagram",
+            "url": "https://www.instagram.com/dazi_gomi/",
+            "color":"instagram"
+          },
+          {
+            "name": "Steam",
+            "url": "https://steamcommunity.com/id/dazi_gomi",
+            "color":"steam"
+          },
+          {
+            "name": "Twitch",
+            "url": "https://www.twitch.tv/dazi_gomi",
+            "color":"twitch"
+          }
+        ]
+      }
+    },
+    head() {
+      return {
+        title: 'About'
+      }
     }
-
   }
+</script>
+
+<style lang="scss">
 
   .item {
     display: inline-flex;
@@ -28,19 +51,17 @@
     align-items: center;
     height: auto;
     text-decoration: none;
+    font-size: 1.4rem;
 
     + .item {
-      margin-top: 10px;
-      @include tab {
-        margin-top: 4%;
-      }
+      margin-top: 1rem;
     }
 
     a {
       position: relative;
       width: auto;
       height: auto;
-      padding: 3px 10px;
+      padding: 0.2rem 0.5rem;
       text-decoration: none;
     }
 
