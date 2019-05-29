@@ -1,7 +1,7 @@
-# My Portfolio Site
+# My Portfolio Site  
 dazi_gomi's Portfolio
 
 
-##Contact
+##Contact  
 [Twitter](https://twitter.com/dazi_gomi)  
 [Web](https://dazigomi.com/)
